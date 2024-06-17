@@ -38,11 +38,31 @@
 .about-mf .about-img {
   margin-bottom: 2rem;
 }
+.notification {
+    background-color: #ffcc00; /* Yellow background */
+    color: #333; /* Dark text color */
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure it's on top of other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.notification p {
+    margin: 0;
+    font-size: 16px;
+}
 
 .about-mf .about-img img {
   margin-left: 10px;
 }
-
+.close-btn {
+    cursor: pointer;
+    margin-left: 15px;
+    font-weight: bold;
+}
 
 .skill-mf .progress {
   /* background-color: #cde1f8; */
@@ -135,6 +155,16 @@
 	      </div>
 	    </div>
 	  </nav>
+	  <div class="notification" id="notification">
+        	<p>This website is currently under development. Check back soon for updates!
+            		<span class="close-btn" id="close-btn">&times;</span>
+        	</p>
+	  </div>
+	  <script>
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('notification').style.display = 'none';
+        });
+    	</script>
 	  <section id="home-section" class="hero">
 		  <div class="home-slider  owl-carousel">
 	       <div class="slider-item ">
